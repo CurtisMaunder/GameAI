@@ -1,0 +1,38 @@
+{
+    "Dwarf": {
+        "checkpoints": [
+            {
+                "steps": 499965,
+                "file_path": "results\\dwarf_2\\Dwarf\\Dwarf-499965.onnx",
+                "reward": 1.4452139408196039,
+                "creation_time": 1620960513.7315264,
+                "auxillary_file_paths": [
+                    "results\\dwarf_2\\Dwarf\\Dwarf-499965.pt"
+                ]
+            },
+            {
+                "steps": 500023,
+                "file_path": "results\\dwarf_2\\Dwarf\\Dwarf-500023.onnx",
+                "reward": 1.4452288904007005,
+                "creation_time": 1620960513.767526,
+                "auxillary_file_paths": [
+                    "results\\dwarf_2\\Dwarf\\Dwarf-500023.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500023,
+            "file_path": "results\\dwarf_2\\Dwarf.onnx",
+            "reward": 1.4452288904007005,
+            "creation_time": 1620960513.767526,
+            "auxillary_file_paths": [
+                "results\\dwarf_2\\Dwarf\\Dwarf-500023.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.8.1+cpu"
+    }
+}

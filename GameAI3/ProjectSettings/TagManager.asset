@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Goal
   - River
+  - Obstacle
+  - Start
+  - Treat
   layers:
   - Default
   - TransparentFX
