@@ -41,11 +41,35 @@ public class DwarfAgent : Agent {
 
     public float forceMultiplier = 10f;
     public override void OnActionReceived(ActionBuffers actionBuffers){
+        /*
         //Actions, size = 2
         Vector2 controlSignal = Vector2.zero;
         controlSignal.x = actionBuffers.ContinuousActions[0];
         controlSignal.y = actionBuffers.ContinuousActions[1];
         rBody.velocity = controlSignal * 5f;
+        */
+
+        //Moving from continuous to discrete actions
+        //Sourced from Code Monkey
+        int moveX = actionBuffers.DiscreteActions[0]; //0 = Don't move | 1 = Left | 2 = Right
+        int moveY = actionBuffers.DiscreteActions[1]; //0 = Don't move | 1 = Up   | 2 = Down
+
+        Vector2 addForce = Vector2.zero;
+
+        switch (moveX) {
+            case 0: addForce.x = 0f; break;
+            case 1: addForce.x = -1f; break;
+            case 2: addForce.x = +1f; break;
+        }
+
+        switch (moveY) {
+            case 0: addForce.y = 0f; break;
+            case 1: addForce.y = -1f; break;
+            case 2: addForce.y = +1f; break;
+        }
+
+        float moveSpeed = 5f;
+        rBody.velocity = addForce * moveSpeed;
 
         //Rewards
         float distanceToTarget = Vector2.Distance(this.transform.localPosition, Target.localPosition);
@@ -54,9 +78,24 @@ public class DwarfAgent : Agent {
     }
 
     public override void Heuristic(in ActionBuffers actionsOut){
+        /*
         var continuousActionsOut = actionsOut.ContinuousActions;
         continuousActionsOut[0] = Input.GetAxis("Horizontal");
         continuousActionsOut[1] = Input.GetAxis("Vertical");
+        */
+        ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
+
+        switch (Mathf.RoundToInt(Input.GetAxisRaw("Horizontal"))) {
+            case -1: discreteActions[0] = 1; break;
+            case 0: discreteActions[0] = 0; break;
+            case +1: discreteActions[0] = 2; break;
+        }
+
+        switch (Mathf.RoundToInt(Input.GetAxisRaw("Vertical"))) {
+            case -1: discreteActions[1] = 1; break;
+            case 0: discreteActions[1] = 0; break;
+            case +1: discreteActions[1] = 2; break;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col){

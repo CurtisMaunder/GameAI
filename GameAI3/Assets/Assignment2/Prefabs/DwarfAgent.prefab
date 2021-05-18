@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6055141836507455881}
   - component: {fileID: 1348548936170006616}
   - component: {fileID: 2181456197669409488}
+  - component: {fileID: -2901076048732599197}
   m_Layer: 0
   m_Name: DwarfAgent
   m_TagString: Untagged
@@ -172,13 +173,13 @@ MonoBehaviour:
     VectorObservationSize: 8
     NumStackedVectorObservations: 1
     m_ActionSpec:
-      m_NumContinuousActions: 2
-      BranchSizes: 
-    VectorActionSize: 02000000
+      m_NumContinuousActions: 0
+      BranchSizes: 0300000003000000
+    VectorActionSize: 0300000003000000
     VectorActionDescriptions: []
-    VectorActionSpaceType: 1
+    VectorActionSpaceType: 0
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 194b7deb3bf1a18409a6e1797c42b70a, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: e870fc684cd80cf47a3aac9bda7e4f0e, type: 3}
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Dwarf
@@ -213,3 +214,19 @@ MonoBehaviour:
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &-2901076048732599197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698656616340999617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2902496c0120472b90269f94a0aec7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Record: 0
+  NumStepsToRecord: 4000
+  DemonstrationName: DwarfDemo
+  DemonstrationDirectory: Demos

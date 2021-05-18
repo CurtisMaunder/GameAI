@@ -22,6 +22,12 @@ behaviors:
         strength: 0.2
         gamma: 0.99
         encoding_size: 512
+      gail:
+        strength: 1.0
+        demo_path: C:\Users\Curtis\Documents\GitHub\GameAI-Fork\GameAI3\Demos
+    behavioral_cloning:
+        strength: 1.0
+        demo_path: C:\Users\Curtis\Documents\GitHub\GameAI-Fork\GameAI3\Demos
     max_steps: 500000
     time_horizon: 64
     summary_freq: 10000
